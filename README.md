@@ -6,10 +6,15 @@ This was a project i did for Odense Municipalty as an intern.
 It was my first time creating an Angular application with a C# backend.
 I grew a lot as a developer, as i only had basic experience in php at the time.
 
-The quality of the project isn't that good - but it reflects on how i've improved over time.
-It was well recieved, and included in their stack when i left.
+My mentor _Morten_ was a fantastic source of information. At the time he was like a coding wizard to me.
+I consider myself lucky to have been taught by him. _thanks for putting up with my stupid questions at the time mate!_
+
+The quality of the project isn't that good (looking back on it) - but it reflects on how i've improved over time. I grew a lot as a developer while creating this project - as it was the first software i made, that was actually going to be used.
+
+It was well recieved, and as far as i'm aware it's included in their stack. Though i feel a bit sorry for the lad that had to fix some of the mess i made.
 
 I worked on this project from October 2017 to February 2018.
+It had it's ups and downs - but my takeaway from the ordeal was i became a better developer - and my mentor seemed impressed with what i created, considering my background.
 
 Angular frontend
 
