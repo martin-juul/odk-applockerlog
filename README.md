@@ -2,6 +2,8 @@ AppLockerLog
 ======
 Dashboard for AppLocker entries.
 
+Preface
+======
 This was a project i did for Odense Municipalty as an intern.
 It was my first time creating an Angular application with a C# backend.
 I grew a lot as a developer, as i only had basic experience in php at the time.
@@ -16,6 +18,8 @@ It was well recieved, and as far as i'm aware it's included in their stack. Thou
 I worked on this project from October 2017 to February 2018.
 It had it's ups and downs - but my takeaway from the ordeal was i became a better developer - and my mentor seemed impressed with what i created, considering my background.
 
+The application
+======
 Angular frontend
 
 .NET Web API 2.0
