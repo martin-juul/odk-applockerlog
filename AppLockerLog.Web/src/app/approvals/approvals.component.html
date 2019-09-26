@@ -1,0 +1,102 @@
+<div *ngIf="readRole">
+    <div class="row">
+        <div class="col-sm-3">
+            <form>
+            <div class="form-group">
+                <div class="input-group">
+                <div class="input-group-addon"><i class="glyphicon glyphicon-search"></i></div>
+                <input
+                    type="text"
+                    class="form-control"
+                    name="searchString"
+                    placeholder="Search..."
+                    [(ngModel)]="searchString"
+                    (ngModelChange)="search($event)">
+                </div>
+            </div>
+            </form>
+        </div>
+        <div class="col-sm-1" *ngIf="writeRole">
+            <button class="btn btn-default btn-primary" [routerLink]="['create']">Create</button>
+        </div>
+    </div>
+    
+    <hr>
+    
+    <div class="row">
+        <div class="col-xs-12 col-md-12 col-lg-12">
+            <p>Results: {{ pageTotalCount }}</p>
+            <div class="table-responsive">
+                <table class="table table-striped table-bordered table-hover">
+                    <thead>
+                        <tr>
+                            <th>
+                                ID
+                            </th>
+                            <th>
+                                Username
+                            </th>
+                            <th>
+                                Computer
+                            </th>
+                            <th lang="da, en">Reasoning <span class="hint">(autosaves)</span></th>
+                            <th>
+                                Group(s)
+                            </th>
+                            <th>
+                                Timestamp
+                            </th>
+                            <th>Created By</th>
+                            <th *ngIf="writeRole"></th>
+                        </tr>
+                    </thead>
+                    <tfoot>
+                        <tr>
+                            <th>
+                                ID
+                            </th>
+                            <th>
+                                Username
+                            </th>
+                            <th>
+                                Computer
+                            </th>
+                            <th lang="da, en">Reasoning <span class="hint">(autosaves)</span></th>
+                            <th>
+                                Group(s)
+                            </th>
+                            <th>
+                                Timestamp
+                            </th>
+                            <th>Created By</th>
+                            <th *ngIf="writeRole"></th>
+                        </tr>
+                    </tfoot>
+                    <tbody>
+                        <tr app-approvals-item
+                        *ngFor="let entry of approvalEntries; let i = index"
+                        [entries]="entry"></tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+    
+    <nav class="text-center">
+        <ul class="pagination">
+            <li
+                *ngFor="let page of paginationPages; let i = index"
+                routerLinkActive="active"
+                [routerLink]="['/approvals']"
+                [queryParams]="{page: i}">
+                <a
+                    type="button"
+                    (click)="setPage(i)">{{ page }}</a>
+            </li>
+        </ul>
+    </nav>
+</div>
+
+<div *ngIf="!readRole">
+    You do not have permission to view this page!
+</div>

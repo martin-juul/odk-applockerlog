@@ -1,0 +1,30 @@
+<td *ngIf="readRole">{{ entry.id }}</td>
+<td>{{ entry.name }}</td>
+<td>{{ entry.vendor }}</td>
+
+<td *ngIf="writeRole">
+    <textarea
+        cols="20"
+        rows="5"
+        class="form-control tbl-textarea"
+        (input)="captureChange(entry.id, $event.target.value)"
+        >{{ entry.reasoning }}</textarea>
+</td>
+<td *ngIf="!writeRole || consumerRole">
+    {{ entry.reasoning }}
+</td>
+
+<td
+    title="{{ entry.timeStamp | date: 'dd/MM-yyyy HH:mm:ss' }}">
+    {{ entry.timeStamp | date: 'E dd-MMM-yy HH:mm:ss' }}
+</td>
+
+<td *ngIf="readRole">{{ entry.createdBy }}</td>
+
+<td class="center-text" *ngIf="writeRole">
+    <div>
+        <button (click)="deleteEntry(entry.id)" class="btn btn-danger" title="Delete">
+            <i class="fa fa-trash"></i>
+        </button>
+    </div>
+</td>

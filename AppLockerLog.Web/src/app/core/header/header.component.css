@@ -1,0 +1,18 @@
+@media screen and (min-width: 768px) {
+    .navbar {
+        border-radius: 0 0 4px 4px;
+    }
+}
+
+.appLink {
+    cursor: pointer;
+}
+
+.user {
+    font-weight: 600;
+}
+
+a.navbar-brand > i.fa {
+    vertical-align: bottom;
+    margin-left: 2px;
+}

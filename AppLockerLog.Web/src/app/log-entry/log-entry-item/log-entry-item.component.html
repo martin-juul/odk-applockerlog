@@ -1,0 +1,96 @@
+<td>{{ logEntry.id }}</td>
+<td *ngIf="readRole"><a href="mailto:{{ logEntry.userName }}@odense.dk?subject=Ang.%20programforespørgsel">{{ logEntry.userName }}</a></td>
+<td *ngIf="consumerRole">{{ logEntry.userName }}</td>
+<td *ngIf="readRole">{{ logEntry.computerName }}</td>
+<td *ngIf="readRole">{{ logEntry.ip }}</td>
+
+<td *ngIf="writeRole">
+    <div>
+        <!--<select class="form-control" name="softs">
+            <option value="0" disabled>Choose software</option>
+            <option value="0">Unknown</option>
+            <option class="form-control" name="test">test</option>
+        </select>
+        <div>
+            <textarea
+                class="form-control text-field"
+                cols="20"
+                rows="5"
+                (input)="searchSoftware1(logEntry.id, $event.target.value)"
+                >{{ logEntry.softwareName }}</textarea>
+        </div>-->
+        <span class="styled-select pointer">
+            <input class="pointer" type="text" readonly />
+            <span class="list" data-empty="None" (click)="setMenuStyle($event)">
+                <textarea
+                    class="form-control text-field fake-select-search"
+                    cols="20"
+                    rows="5"
+                    (input)="searchSoftware1(logEntry.id, $event.target.value)"
+                    >{{ logEntry.softwareName }}</textarea>
+                <span>
+                    <input type="radio" name="radio" id="Radio1" checked value="Eins"/>
+                    <label for="Radio1" title="Radio 1">Radio 1</label>
+                </span>
+            </span>
+          </span>
+    </div>
+</td>
+<td *ngIf="!writeRole">
+    {{ logEntry.softwareName }}
+</td>
+
+<td *ngIf="readRole"><p class="le-text">{{ logEntry.programDescription }}</p></td>
+<td><p class="le-text">{{ logEntry.rapportDescription }}</p></td>
+
+<td title="{{ logEntry.timeStamp | date: 'dd/MM-yyyy HH:mm:ss' }}">{{ logEntry.timeStamp | date: 'E dd-MMM-yy HH:mm:ss' }}</td>
+<td *ngIf="writeRole">
+    <textarea
+        class="form-control tbl-textarea"
+        cols="30"
+        (input)="captureChange(logEntry.id, $event.target.value, 'note')"
+        >{{ logEntry.note }}</textarea>
+</td>
+<td *ngIf="!writeRole">
+    {{ logEntry.note }}
+</td>
+
+<td *ngIf="logEntry.editedBy" class="center-text approved">
+    <p>Approved by: <span class="approval-text">{{ logEntry.editedBy }}</span></p>
+    <div class="inline-element" *ngIf="writeRole">
+        <button (click)="updateEditedBy(logEntry.id, 'unapprove')" class="btn btn-default btn-warning" title="Unapprove">
+            <i class="fa fa-times-circle"></i>
+        </button>
+        <button (click)="deleteEntry(logEntry.id)" class="btn btn-default btn-default" title="Delete">
+            <i class="fa fa-trash"></i>
+        </button>
+    </div>
+</td>
+<td *ngIf="logEntry.deniedBy" class="center-text denied">
+    <p>Denied by: <span class="approval-text">{{ logEntry.deniedBy }}</span></p>
+    <div class="inline-element" *ngIf="writeRole">
+        <button (click)="updateDeniedBy(logEntry.id, 'unapprove')" class="btn btn-default btn-warning" title="Undeny">
+            <i class="fa fa-times-circle"></i>
+        </button>
+        <button (click)="deleteEntry(logEntry.id)" class="btn btn-default btn-default" title="Delete">
+            <i class="fa fa-trash"></i>
+        </button>
+    </div>
+</td>
+<td *ngIf="!logEntry.editedBy && !logEntry.deniedBy" class="center-text">
+    <div *ngIf="writeRole">
+        <div class="approval-options">
+            <button (click)="updateEditedBy(logEntry.id)" class="btn btn-default btn-success" title="Approve">
+                <i class="fa fa-thumbs-up"></i>
+            </button>
+            <button (click)="updateDeniedBy(logEntry.id)" class="btn btn-default btn-danger" title="Deny">
+                <i class="fa fa-thumbs-down"></i>
+            </button>
+        </div>
+        <div>
+            <button (click)="deleteEntry(logEntry.id)" class="btn btn-default btn-default" title="Delete">
+                <i class="fa fa-trash"></i>
+            </button>
+        </div>
+    </div>
+</td>

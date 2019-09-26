@@ -1,0 +1,67 @@
+<div class="col-md-4 col-md-offset-4">
+    <div *ngIf="!writeRole">
+            <p>You do not have permission to view this page!</p>
+    </div>
+    <form (ngSubmit)="onSubmit()" #f="ngForm" *ngIf="writeRole">
+    <div class="form-group">
+        <div class="input-group">
+            <span class="input-group-addon">
+                <i class="fa fa-user"></i>
+            </span>
+            <input
+                type="text"
+                class="form-control"
+                id="username"
+                name="username"
+                placeholder="Username (*)"
+                required
+                ngModel
+                #username="ngModel">
+        </div>
+        <span class="help-block" *ngIf="!username.valid && !username.touched">Please enter a username</span>
+        <div class="input-group">
+            <span class="input-group-addon">
+                <i class="fa fa-desktop"></i>
+            </span>
+            <input
+                type="text"
+                class="form-control"
+                id="computername"
+                name="computername"
+                placeholder="e.g C20000"
+                ngModel
+                #computername="ngModel">
+        </div>
+    </div>
+    <div class="form-group">
+        <div class="input-group" ngModelGroup="groups">
+            <p class="group-section">Groups</p>
+            <div *ngFor="let group of groups">
+                <label>
+                    <input
+                    type="checkbox"
+                    [name]="group"
+                    ngModel>{{ group }}
+                    </label>
+            </div>
+        </div>
+    </div>
+    <div class="form-group">
+        <div class="input-group">
+            <label for="reasoning" class="control-label">Reasoning</label>
+            <textarea
+                class="form-control"
+                id="reasoning"
+                cols="50"
+                rows="10"
+                name="reasoning"
+                ngModel></textarea>
+            </div>
+    </div>
+    <div class="form-group">
+        <button
+        class="btn btn-default"
+        [disabled]="!f.valid">Submit</button>
+    </div>
+    </form>
+</div>

@@ -1,0 +1,46 @@
+span.hint {
+    color: #bbb7b7;
+    font-weight: 300;
+    font-size: 1.2rem;
+    margin-left: 0.2rem;
+}
+
+th {
+    font-size: 1.4rem;
+}
+
+a[type="button"] {
+    cursor: pointer;
+}
+
+.pointer {
+    cursor: pointer;
+}
+
+table.letable {
+    table-layout: fixed;   
+}
+
+.entry-t-id {
+    width: 3%;
+}
+
+.entry-t-user {
+    width: 7%;
+}
+
+.entry-t-computer {
+    width: 7%;
+}
+
+.entry-t-ip {
+    width: 10%;
+}
+
+.entry-t-sw {
+    width: 17%;
+}
+
+.entry-t-status {
+    width: 9%;
+}

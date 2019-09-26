@@ -1,0 +1,62 @@
+<td>{{ entries.id }}</td>
+<td>{{ entries.userName }}</td>
+
+<td *ngIf="writeRole">
+    <textarea
+    class="form-control text-computername"
+    cols="20"
+    rows="5"
+    (input)="captureComputerNameChange(entries.id, $event.target.value)"
+    >{{ entries.computerName }}</textarea>
+</td>
+<td *ngIf="!writeRole">{{ entries.computerName }}</td>
+
+<td *ngIf="writeRole">
+    <textarea
+    class="form-control tbl-textarea"
+    cols="20"
+    rows="5"
+    (input)="captureChange(entries.id, $event.target.value)"
+    >{{ entries.reasoning }}</textarea>
+</td>
+<td *ngIf="!writeRole">{{ entries.reasoning }}</td>
+
+<td>
+    <form #f="ngForm" (ngSubmit)="addGroup(entries.id)" *ngIf="writeRole">
+        <div class="input-group group-adder">
+            <select class="form-control" name="group" ngModel="group">
+                <option disabled selected [ngValue]="undefined">Select group</option>
+                <option *ngFor="let group of groups" [value]="group">{{ group }}</option>
+            </select>
+            <span class="input-group-btn">
+                <button
+                    class="btn btn-default"
+                    [disabled]="!f.valid"
+                    >
+                Add group
+                <i class="fa fa-user-plus"></i>
+                </button>
+            </span>
+        </div>
+    </form>
+    <ul>
+        <p class="usr-groups-list" *ngFor="let group of entries.assignedUserGroups">
+            <li>
+                {{ group.group }}
+                <i
+                    (click)="removeGroupFromUser(group.id, entries.id, group.group, entries.userName)"
+                    class="fa fa-remove pointer cross-button"
+                    *ngIf="writeRole"></i>
+            </li>
+        </p>
+    </ul>
+</td>
+<td title="{{ entries.timeStamp | date: 'dd/MM-yyyy HH:mm:ss' }}">{{ entries.timeStamp | date: 'E dd-MMM-yy HH:mm:ss' }}</td>
+<td>{{ entries.approver }}</td>
+<td class="center-text" *ngIf="writeRole">
+    <div>
+        <button (click)="deleteEntry(entries.id)" class="btn btn-default btn-danger" title="Delete">
+            <i class="fa fa-trash"></i>
+        </button>
+    </div>
+</td>

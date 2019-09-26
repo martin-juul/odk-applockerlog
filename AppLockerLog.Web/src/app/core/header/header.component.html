@@ -1,0 +1,47 @@
+<nav class="navbar navbar-default">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <a
+                class="navbar-brand"
+                [routerLink]="['/']">
+                AppLockerLog
+                <i class="fa fa-unlock-alt"></i>
+            </a>
+        </div>
+        <ul class="nav navbar-nav navbar-right">
+            <li
+                [routerLinkActive]="['active']"
+                [routerLinkActiveOptions]="{ exact: true }">
+                <a class="appLink"
+                    [routerLink]="['/']">
+                    Home
+                </a>
+            </li>
+            <li
+                [routerLinkActive]="['active']"
+                *ngIf="readRole">
+                <a class="appLink"
+                    [routerLink]="['/approvals']">
+                    Approved Users
+                </a>
+            </li>
+            <li
+                [routerLinkActive]="['active']"
+                title="Godkendt Software">
+                <a class="appLink"
+                    [routerLink]="['/software/approved']">
+                    Approved Software
+                </a>
+            </li>
+            <li
+                [routerLinkActive]="['active']"
+                title="Forbudt Software">
+                <a class="appLink"
+                    [routerLink]="['/software/denied']">
+                    Denied Software
+                </a>
+            </li>
+            <li><a class="user">{{ userName }}</a></li>
+        </ul>
+    </div>
+</nav>

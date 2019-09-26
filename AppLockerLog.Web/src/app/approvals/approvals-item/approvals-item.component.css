@@ -1,0 +1,40 @@
+td.center-text {
+    text-align: center;
+    vertical-align: middle !important;
+}
+
+textarea.tbl-textarea {
+    resize: vertical;
+    min-height: 100px;
+    max-height: 500px;
+}
+
+i.cross-button, .group-add {
+    transition: all 150ms ease-in-out;
+}
+
+i.cross-button:hover, .group-add:hover {
+    color: #6e6e6e;
+}
+
+.group-add {
+    text-align: right;
+}
+
+.text-computername {
+    resize: vertical;
+    min-height: 30px;
+    max-height: 35px;
+    max-width: 240px;
+    margin: auto;
+}
+
+.group-adder {
+    max-width: 75%;
+    margin: 0 auto 1.2rem auto;
+}
+
+.usr-groups-list {
+    max-width: 80%;
+    margin: auto;
+}

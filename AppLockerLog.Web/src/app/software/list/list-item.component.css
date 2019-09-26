@@ -1,0 +1,28 @@
+span.hint {
+    color: #bbb7b7;
+    font-weight: 300;
+    font-size: 1.2rem;
+    margin-left: 0.2rem;
+}
+
+th {
+    font-size: 1.4rem;
+}
+
+a[type="button"] {
+    cursor: pointer;
+}
+
+.pointer {
+    cursor: pointer;
+}
+
+td.center-text {
+    text-align: center;
+    vertical-align: middle !important;
+    min-width: 110px;
+}
+
+div.options {
+    margin-bottom: 7px;
+}

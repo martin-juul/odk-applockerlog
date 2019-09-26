@@ -1,0 +1,19 @@
+label.list-label {
+    line-height: 3 !important;
+}
+
+form.list-form-control {
+    width: 40% !important;
+}
+
+textarea.list-form-control {
+    height: 150px !important;
+}
+
+select.list-form-control, textarea.list-form-control {
+    width: 207px !important;
+}
+
+.list-rounded-borders {
+    border-radius: 4px !important;
+}

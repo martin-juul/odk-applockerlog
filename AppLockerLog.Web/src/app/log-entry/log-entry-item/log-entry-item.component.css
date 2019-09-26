@@ -1,0 +1,142 @@
+td.center-text {
+    text-align: center;
+    vertical-align: middle !important;
+    min-width: 110px;
+}
+
+div.inline-element {
+    display: inline;
+}
+
+textarea.tbl-textarea {
+    resize: vertical;
+    min-height: 100px;
+    max-height: 500px;
+}
+
+span.approval-text {
+    font-weight: 700;
+}
+
+p.le-text {
+    word-break: break-word;
+}
+
+td.denied {
+    background-color: #f66055;
+}
+
+td.approved {
+    background-color: #5fb962;
+}
+
+td.approved, td.denied {
+    color: #ffffff;
+}
+
+div.approval-options {
+    margin-bottom: 7px;
+}
+
+.text-field {
+    resize: vertical;
+    min-height: 30px;
+    max-height: 35px;
+    margin: auto;
+}
+
+@media screen and (-webkit-min-device-pixel-ratio:0) and (min-resolution: .001dpcm) {
+    textarea.tbl-textarea {
+        min-height: 85px;
+    }
+}
+
+.pointer {
+    cursor: pointer;
+}
+
+/* Fake Select */
+
+.styled-select {
+    display: inline-block;
+    width: 208px;
+    position: relative;
+    height: 35px;
+    z-index: 5;
+}
+.styled-select:active, .styled-select:focus {
+    z-index: 10;
+}
+.styled-select input {
+    height: 35px;
+    width: 100%;
+    padding: 5px;
+    border: 1px solid #DDD;
+    z-index: 1;
+    background-color: rgba(0, 0, 0, 1.0e-06);
+    position: absolute;
+    top: 0;
+    left: 0;
+    box-sizing: border-box;
+}
+.styled-select input:focus + span,
+.styled-select input + span:hover {
+    height: auto;
+}
+.styled-select .list {
+    display: block;
+    height: 33px;
+    overflow: hidden;
+    list-style: none;
+    margin: 0 0 0 0;
+    padding: 35px 0 0 0;
+    position: absolute;
+    width: 100%;
+    border: none;
+    background-color: #ccc;
+    padding: 10px;
+}
+.styled-select
+.list:before {
+    content: attr(data-empty);
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 35px;
+    width: 100%;
+    padding: 5px;
+    box-sizing: border-box;
+    line-height: 25px;
+}
+.styled-select .list label {
+    padding: 5px;
+    display: block;
+    line-height: 25px;
+    height: 35px;
+    border-left: 1px solid #DDD;
+    border-right: 1px solid #DDD;
+}
+.styled-select .list label:last-child {
+    border-bottom: 1px solid #DDD;
+}
+.styled-select .list [type="radio"],
+.styled-select .list [type="checkbox"] {
+    display: none;
+}
+.styled-select .list input:checked + label {
+    background-color: #DDD;
+}
+.styled-select .list input:checked + label:before {
+    content: attr(title);
+    position: absolute;
+    height: 35px;
+    width: 100%;
+    top: 0;
+    left: 0;
+    padding: 5px;
+    background-color: #FFF;
+    box-sizing: border-box;
+}
+.fake-select-search {
+    margin-top: 35px;
+}

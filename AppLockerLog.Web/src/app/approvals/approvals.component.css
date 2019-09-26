@@ -1,0 +1,10 @@
+span.hint {
+    color: #bbb7b7;
+    font-weight: 300;
+    font-size: 1.2rem;
+    margin-left: 0.2rem;
+}
+
+th {
+    font-size: 1.4rem;
+}
